@@ -1,0 +1,16 @@
+.user-sign-img
+  .user-sign-img-rgba
+    .user-sign-box
+      h2 パスワードをお忘れの方
+      .reset-password-info
+        p 下記フォームにメールアドレスを入力して下さい。
+        p パスワードをリセットするためのリンクを送信いたします。
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .user-sign-field
+          = f.label :email
+          = f.email_field :email, autofocus: true, placeholder: 'info@example.com'
+        .user-sign-button
+          = f.submit "リンクを送信"
+        .user-sign-link
+          = render "users/shared/links"

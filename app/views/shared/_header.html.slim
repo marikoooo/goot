@@ -1,0 +1,9 @@
+.header-box
+  .header-nav
+    ul
+      li = link_to "HOME", root_path
+      - if user_signed_in?
+        li = link_to "Account"
+        li = link_to "LOGOUT", destroy_user_session_path, method: :delete
+      - else
+        li = link_to "LOGIN", new_user_session_path

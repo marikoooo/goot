@@ -1,1 +1,25 @@
-h1 Home
+.top-img
+  .clearfix
+    .top-header-nav
+      ul
+        - if user_signed_in?
+          li = link_to "LogOUT", destroy_user_session_path, method: :delete
+          li = link_to "Account"
+        - else
+          li = link_to "LogIN", new_user_session_path
+  .clearfix
+    .top-subtitle
+      svg.intro width="580" height="500"
+        text.text.text-stroke clip-path="url(#text1)" text-anchor="start" x="30" y="150" DISCOVER
+        text.text.text-stroke clip-path="url(#text2)" text-anchor="start" x="30" y="300" AWESOME
+        text.text.text-stroke clip-path="url(#text3)" text-anchor="start" x="30" y="450" PLACE.
+        text.text-stroke.text-stroke-2 clip-path="url(#text1)" text-anchor="start" x="40" y="150" DISCOVER
+        text.text-stroke.text-stroke-2 clip-path="url(#text2)" text-anchor="start" x="40" y="300" AWESOME
+        text.text-stroke.text-stroke-2 clip-path="url(#text3)" text-anchor="start" x="40" y="450" PLACE.
+        defs
+          clippath#text1
+            text.text text-anchor="start" x="30" y="150" DISCOVER
+          clippath#text2
+            text.text text-anchor="start" x="30" y="300" AWESOME
+          clippath#text3
+            text.text text-anchor="start" x="30" y="450" PLACE.
