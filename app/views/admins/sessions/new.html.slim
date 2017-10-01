@@ -1,0 +1,14 @@
+.admin-sign-box
+  h2
+    | 管理者Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .admin-sign-field
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true
+    .admin-sign-field
+      = f.label :password
+      br
+      = f.password_field :password, autocomplete: "off"
+    .admin-sign-button
+      = f.submit "Log in"

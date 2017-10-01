@@ -1,0 +1,14 @@
+.user-sign-img
+  .user-sign-img-rgba
+    .user-sign-box
+      h2
+        | 確認メール再送信
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .user-sign-field
+          = f.label :email
+          = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: 'info@example.com'
+        .user-sign-button
+          = f.submit "メール送信"
+        .user-sign-link
+          = render "users/shared/links"

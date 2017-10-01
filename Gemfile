@@ -36,6 +36,13 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'awesome_print'     # Rubyオブジェクトに色をつけて表示して見やすくなる
+  gem 'pry-rails'    # rails cの対話式コンソールがirbの代わりにリッチなpryになる
+  gem 'pry-doc'      # pry中に show-source [method名] でソース内を読める
+  gem 'pry-byebug'   # binding.pryをソースに記載すると、ブレイクポイントとなりデバッグが可能になる
+  gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる
+  gem 'better_errors'     # 開発中のエラー画面をリッチにする
+  gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
 end
 
 group :development do
@@ -45,9 +52,25 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener_web'
+  gem 'guard-livereload', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'slim-rails'
+
+# log in authentication
+gem 'devise'
+
+# image
+gem 'carrierwave'
+gem 'rmagick', require: 'RMagick'
+
+# jquery
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+
+gem 'seed-fu'

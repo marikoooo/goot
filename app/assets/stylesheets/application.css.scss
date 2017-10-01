@@ -1,0 +1,215 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding:  0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Avenir Next"
+}
+
+ul {
+  list-style: none
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+ @import url('https://fonts.googleapis.com/css?family=Anton');
+ @import 'https://fonts.googleapis.com/css?family=Baloo+Paaji';
+ @import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+// HEADER
+
+.header-box {
+  background-color: #2F24C1;
+  height: 60px;
+  font-family: 'Intro';
+}
+
+.header-nav {
+  float: right;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+.header-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.header-nav a {
+  color: #fff;
+}
+
+.header-nav a:hover {
+  color: red;
+}
+
+// HEADER
+
+
+// FOOTER
+
+.footer-box {
+  height: 100px;
+  background-color: #F1F7FA;
+  border-top: 2px solid #3E6B89;
+  margin-bottom: 20px;
+}
+
+.footer-box p {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+// FOOTER
+
+ // ADMIN SIGN FORM
+
+.admin-sign-box {
+  text-align: center;
+  padding-top:  80px;
+  h2 {
+    padding-bottom: 35px;
+  }
+}
+
+.admin-sign-field {
+  margin-bottom: 30px;
+  label {
+    font-size: 13px;
+  }
+  input[type="email"],
+  input[type="password"] {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}
+
+.admin-sign-button input[type="submit"] {
+  height: 35px;
+  width: 145px;
+  border: 1px solid #8C9EFF;
+  border-radius: 6px;
+  margin-bottom: 70px;
+  margin-top: 20px;
+  background-color: #c5c5c5;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px;
+  }
+}
+
+ // ADMIN SIGN FORM
+
+
+  // USER SIGN FORM
+
+ .user-sign-img {
+  background-image: url("/images/travel_signboard.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+}
+
+.user-sign-img-rgba {
+  background-color: rgba(255,255,255,0.8);
+  height: 100%;
+}
+
+.user-sign-box {
+  margin: 0 auto;
+  width: 330px;
+  text-align: center;
+  padding-top: 80px;
+  h2 {
+    padding-bottom: 35px;
+  }
+}
+
+.user-sign-field {
+  margin-bottom: 30px;
+  label {
+    font-size: 13px;
+  }
+  input[type="email"],
+  input[type="password"] {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    font-size: 15px;
+  }
+}
+
+.user-sign-button input[type="submit"] {
+  height: 35px;
+  width: 145px;
+  border: 1px solid #8C9EFF;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  background-color: #8C9EFF;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px;
+  }
+}
+
+.user-sign-link {
+  font-size: 12px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  a:hover {
+    opacity: 0.4;
+  }
+}
+
+.reset-password-info {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+ // USER SIGN FORM

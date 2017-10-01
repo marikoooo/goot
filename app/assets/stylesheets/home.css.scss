@@ -1,0 +1,106 @@
+/*
+ *= require_tree .
+*/
+
+.top-img {
+  background-image: url("/images/travel_signboard.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 97%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.top-header-nav {
+  float: right;
+  margin-right: 50px;
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+  li {
+    display: inline-block;
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  a {
+    color: #F23557;
+    position: relative;
+    transition: all .3s;
+    &:hover{
+      color: #aaa;
+      padding-bottom: 2px;
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0%;
+      content: "";
+      color: transparent;
+      background: #aaa;
+      height: 2px;
+      transition: all .3s;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}
+
+.top-subtitle {
+  margin-top: 50px;
+  margin-right: 50px;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.5);
+  svg {
+    font-size: 8rem;
+    font-family: 'Anton', sans-serif;
+    font-weight: 900;
+    letter-spacing: 5px;
+  }
+}
+
+svg.intro {
+  .text {
+    display: none;
+  }
+  &.go {
+    .text {
+      display: block;
+    }
+    .text-stroke {
+      fill:none;
+      stroke: #f23557;
+      stroke-width: 9px;
+      stroke-dasharray: 900;
+      stroke-dashoffset: -900;
+      stroke-linejoin: round;
+      stroke-linecap: butt;
+      animation: dash 2.5s ease-in-out forwards;
+    }
+    .text-stroke:nth-child(2) {
+      animation-delay: .2s
+    }
+    .text-stroke:nth-child(3) {
+      animation-delay: .5s;
+    }
+    .text-stroke-2 {
+      stroke: #b02c40;
+      animation-delay: .1s;
+    }
+    .text-stroke:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+    .text-stroke:nth-child(6) {
+      animation-delay: 1.3s;
+    }
+  }
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 1;
+  }
+}
