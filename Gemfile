@@ -74,3 +74,5 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
 gem 'seed-fu'
+
+gem "font-awesome-rails"

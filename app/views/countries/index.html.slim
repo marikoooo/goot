@@ -1,0 +1,25 @@
+.country-index-title
+  h2 Search by country
+  p 国で探してみる
+section.country-index-img
+  h1
+    span Wonder where to go
+  h2
+    span Do you have anywhere you want to go?
+  h3
+    span You can find it here!
+
+.country-index-box
+  - @countries.each do |country|
+    .country-index-link
+      = link_to country_path(country.id) do
+        h4 = country.name_en
+        .country-index-link-img
+          = image_tag country.country_image
+          dl
+            dt = country.name_ja
+            dd = country.overview.html_safe.truncate(85)
+            dd &nbsp;
+            dd 続きを見る
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        p  = country.name_ja

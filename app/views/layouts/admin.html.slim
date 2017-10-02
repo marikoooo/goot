@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title
+      | Goot
+    = csrf_meta_tags
+    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .admin-bg-menu
+      .clearfix
+        .admin-menu-box
+          h2 管理者画面
+          .admin-menu-list
+            ul
+              li = link_to "WEBページへ", root_path
+              li = link_to "ユーザー一覧"
+              li = link_to "国一覧", admins_countries_path
+              li = link_to "ログアウト", destroy_admin_session_path, method: :delete
+        .admin-bg-content
+          .admin-bg-table
+            .admin-table-box
+              = yield
+
+

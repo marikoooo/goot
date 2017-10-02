@@ -1,0 +1,24 @@
+.country-detail-box
+  = image_tag @country.country_image
+  h1 = @country.name_en
+.country-detail-overview-title
+  h2 = @country.name_ja
+.country-detail-overview
+  = @country.overview
+  h2
+    | Things to go...
+    span 行ってすること
+  = simple_format(@country.things_to_go)
+  h2
+    | When to go...
+    span 行く時期
+  = simple_format(@country.when_to_go)
+  h3
+    | 言語：
+    = @country.language
+  h3
+    | 通貨：
+    = @country.currency
+.back-button
+  = link_to "一覧へ戻る", :back
+

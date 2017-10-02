@@ -3,8 +3,8 @@
     .top-header-nav
       ul
         - if user_signed_in?
+          li = link_to @user.user_name
           li = link_to "LogOUT", destroy_user_session_path, method: :delete
-          li = link_to "Account"
         - else
           li = link_to "LogIN", new_user_session_path
   .clearfix
@@ -23,3 +23,8 @@
             text.text text-anchor="start" x="30" y="300" AWESOME
           clippath#text3
             text.text text-anchor="start" x="30" y="450" PLACE.
+section.toppage-menu
+  ul
+    li = link_to countries_path, class: "topmenu-btn" do ||
+      | destination
+      span

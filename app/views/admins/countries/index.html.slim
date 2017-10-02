@@ -1,0 +1,10 @@
+.admin-table-title
+  h1 登録国一覧
+  .admin-link-btn
+    = link_to "国を追加", new_admins_country_path
+.admin-country-index
+  - @countries.each do |country|
+    .admin-country-index-list
+      p = country.name_ja
+      = image_tag country.country_image, size: "100"
+      p = link_to "詳細・編集", admins_country_path(country.id)

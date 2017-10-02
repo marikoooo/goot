@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  resources :countries, only: [:index, :show]
+  namespace :admins do
+    resources :countries
+  end
+
+  get 'admins/dashboard', to: 'admins#dashboard', as: 'dashboard'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930153854) do
+ActiveRecord::Schema.define(version: 20171001144018) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20170930153854) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name_ja"
+    t.string "name_en"
+    t.string "country_image"
+    t.string "currency"
+    t.string "language"
+    t.text "overview"
+    t.text "things_to_go"
+    t.text "when_to_go"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +59,15 @@ ActiveRecord::Schema.define(version: 20170930153854) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
+    t.string "country"
+    t.string "gender"
+    t.text "introduction"
+    t.string "profile_image"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
