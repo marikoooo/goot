@@ -104,3 +104,59 @@ svg.intro {
     stroke-dashoffset: 1;
   }
 }
+
+/* TOP MENU */
+
+.toppage-menu {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  height: 70px;
+  background-color: #3fd1cb;
+  border-top: 3px solid #c5c5c5;
+  border-bottom: 3px solid #c5c5c5;
+  box-sizing: content-box;
+  ul li {
+    display: inline-block;
+    text-align: center;
+    font-family: "Paytone One";
+    font-size: 20px;
+    width: 20%;
+    border-right: 2px solid #0e3735;
+    text-transform: uppercase;
+    line-height: 70px;
+    a {
+      display: block;
+      color: #1a8b9d;
+      font-weight: 900;
+      text-shadow: 0 13px 9px #05807b, 0 -2px 1px #fff;
+      z-index: 1;
+    }
+  }
+}
+
+.topmenu-btn {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #76bebb;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    transform:  translate(-50%, -50%);
+    z-index: -1;
+  }
+  &:hover {
+    color: #daefee;
+    span {
+      width: 225%;
+      height: 562.5px;
+    }
+  }
+}
+
+/* TOP MENU */
