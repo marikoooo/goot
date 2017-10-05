@@ -16,9 +16,13 @@ Rails.application.routes.draw do
   end
 
   resources :countries, only: [:index, :show]
+  resources :travel_journals
   namespace :admins do
     resources :countries
+    resources :travel_journal
+    resources :users
   end
 
   get 'admins/dashboard', to: 'admins#dashboard', as: 'dashboard'
+  get 'users/mypage/:id', to: 'users#mypage', as: 'mypage'
 end

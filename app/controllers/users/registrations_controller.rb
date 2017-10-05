@@ -18,9 +18,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -45,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                                                       :last_name,
                                                                       :first_name_kana,
                                                                       :last_name_kana,
-                                                                      :county,
+                                                                      :country,
                                                                       :gender])
   end
 
@@ -56,11 +56,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                                                                   :last_name,
                                                                                   :first_name_kana,
                                                                                   :last_name_kana,
-                                                                                  :county,
+                                                                                  :country,
                                                                                   :gender,
                                                                                   :introduction,
                                                                                   :profile_image])
   end
+
+    def after_update_path_for(resource)
+      mypage_path(resource)
+    end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

@@ -1,9 +1,23 @@
 .header-box
   .header-nav
     ul
-      li = link_to "HOME", root_path
+      li
+        i class="fa fa-home fa-green" aria-hidden="true"
+        = link_to "HOME", root_path
+      li
+        i class="fa fa-plane fa-green"
+        = link_to "destination", countries_path
+      li
+        i class="fa fa-newspaper-o fa-green"
+        = link_to "journal", travel_journals_path
       - if user_signed_in?
-        li = link_to current_user.user_name
-        li = link_to "LOGOUT", destroy_user_session_path, method: :delete
+        li
+          i class="fa fa-user-circle fa-green"
+          = link_to current_user.user_name, mypage_path(current_user.id)
+        li
+          i class="fa fa-sign-out fa-green"
+          = link_to "LOGOUT", destroy_user_session_path, method: :delete
       - else
-        li = link_to "LOGIN", new_user_session_path
+        li
+          i class="fa fa-sign-in fa-green"
+          = link_to "LOGIN", new_user_session_path

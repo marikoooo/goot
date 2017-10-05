@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001144018) do
+ActiveRecord::Schema.define(version: 20171003122132) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 20171001144018) do
     t.text "when_to_go"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "travel_journals", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "journal_image"
+    t.boolean "status", default: false
+    t.integer "country_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_travel_journals_on_country_id"
+    t.index ["user_id"], name: "index_travel_journals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

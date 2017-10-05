@@ -1,0 +1,17 @@
+.travel-journal-detail-box
+  h2 = @journal.title
+  p
+    span.journal-detail-date
+      | 投稿 : 
+      = @journal.created_at.strftime("%Y-%m-%d")
+    span.journal-detail-user
+      span written by
+      = @journal.user.user_name
+  p
+    | 場所 : 
+    = @journal.country.name_ja
+  p = @journal.content
+  .travel-journal-detail-img
+    = image_tag @journal.journal_image
+    .back-button
+      = link_to "一覧へ", travel_journals_path

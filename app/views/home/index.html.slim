@@ -3,7 +3,8 @@
     .top-header-nav
       ul
         - if user_signed_in?
-          li = link_to @user.user_name
+          i class="fa fa-user-circle fa-green" aria-hidden="true"
+          = link_to current_user.user_name, mypage_path(@user.id)
           li = link_to "LogOUT", destroy_user_session_path, method: :delete
         - else
           li = link_to "LogIN", new_user_session_path
@@ -28,3 +29,47 @@ section.toppage-menu
     li = link_to countries_path, class: "topmenu-btn" do ||
       | destination
       span
+    li = link_to travel_journals_path, class: "topmenu-btn" do ||
+      | travel journal
+      span
+section.top-content1.clearfix
+  h1.top-content-title1
+    span data-text="D" D
+    span data-text="E" E
+    span data-text="S" S
+    span data-text="T" T
+    span data-text="I" I
+    span data-text="N" N
+    span data-text="A" A
+    span data-text="T" T
+    span data-text="I" I
+    span data-text="O" O
+    span data-text="N" N
+  .top-country-list-box
+    - @countries.each do |country|
+      p = link_to country_path(country.id), class: "country-name", data_hover_label: "#{country.name_ja}" do ||
+        span.countryname_label
+         = country.name_en
+section.top-content3.clearfix
+  h1.top-content-title1
+    span data-text="T" T
+    span data-text="R" R
+    span data-text="A" A
+    span data-text="V" V
+    span data-text="E" E
+    span data-text="L" L
+    span data-text=" " &nbsp;
+    span data-text="J" J
+    span data-text="O" O
+    span data-text="U" U
+    span data-text="R" R
+    span data-text="N" N
+    span data-text="A" A
+    span data-text="L" L
+  .top-journal-list-box
+    p
+      = link_to new_travel_journal_path, class: 'top-journal-item' do
+        span.top-journal-item-label 旅行記を書く
+    p
+      = link_to travel_journals_path, class: 'top-journal-item' do
+        span.top-journal-item-label みんなの旅行記を見る

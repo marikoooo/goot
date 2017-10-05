@@ -1,0 +1,32 @@
+.user-mypage-wrap
+  .user-mypage-box
+    h1
+      | マイページ
+    .mypage-menu
+      ul
+        li
+          = link_to edit_user_registration_path, class: 'mypage-menu-item' do
+            span.mypage-menu-item-label プロフィールを編集
+        li
+          = link_to new_travel_journal_path, class: 'mypage-menu-item' do
+            span.mypage-menu-item-label 旅行記を作る
+        li = link_to '質問する'
+        li = link_to '評価する'
+    .account-user-hello
+      h3
+        - if @user.profile_image.present?
+          = image_tag @user.profile_image, size: "80"
+        - else
+          = image_tag("/images/no_image.jpg", size: "50")
+        span Hello &nbsp;
+        = @user.user_name
+        | さん
+    p あなたの旅行記
+    - @journals.each do |journal|
+      = journal.title
+      = journal.content
+      = image_tag journal.journal_image, size: "100"
+      = journal.created_at.strftime("%Y-%m-%d")
+      .mypage-to-journal-edit
+        = link_to "編集する", edit_travel_journal_path
+        = link_to "削除する", travel_journal_path, method: :delete

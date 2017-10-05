@@ -43,6 +43,8 @@ group :development, :test do
   gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる
   gem 'better_errors'     # 開発中のエラー画面をリッチにする
   gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -76,3 +78,4 @@ gem 'jquery-turbolinks'
 gem 'seed-fu'
 
 gem "font-awesome-rails"
+gem "font-awesome-sass"
