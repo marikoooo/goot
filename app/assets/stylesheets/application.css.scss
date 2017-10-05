@@ -19,12 +19,23 @@
   box-sizing: border-box;
 }
 
+ @import url('https://fonts.googleapis.com/css?family=Anton');
+ @import 'https://fonts.googleapis.com/css?family=Baloo+Paaji';
+ @import url('https://fonts.googleapis.com/css?family=Pacifico');
+ @import "font-awesome";
+ @font-face {
+  font-family:'logotypegothic';
+  src:font-url('logotypegothic.otf')
+}
+
 html {
   font-size: 16px;
 }
 
 body {
-  font-family: "Avenir Next"
+  // font-family: "Avenir Next";
+  font-family:'logotypegothic';
+
 }
 
 ul {
@@ -37,16 +48,17 @@ a:visited {
   color: #000;
 }
 
- @import url('https://fonts.googleapis.com/css?family=Anton');
- @import 'https://fonts.googleapis.com/css?family=Baloo+Paaji';
- @import url('https://fonts.googleapis.com/css?family=Pacifico');
- @import "font-awesome";
-
-
 .clearfix:after {
   clear: both;
   content: "";
   display: block;
+}
+
+.fa-green:before
+{
+  color: #A4C639 ;
+  font-size: 20px;
+  padding-right: 3px;
 }
 
 // HEADER
@@ -429,9 +441,11 @@ a:visited {
     }
     dt {
       font-size: 20px;
+      padding-bottom: 8px;
     }
     dd {
       font-size: 12px;
+      line-height: 18px;
     }
   }
   dl dt, dl dd {
@@ -552,6 +566,319 @@ a:visited {
     }
   }
 }
+
+
+ // USER ACCOUNT
+
+ .user-mypage-wrap {
+  background-color: #E8EAF6;
+  font-family:'logotypegothic';
+ }
+
+.user-mypage-box {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  background-color: #fff;
+  h1, h2 {
+    margin-bottom: 20px;
+    padding-top: 50px;
+    padding-left: 20px;
+    span {
+      font-size: 15px;
+      padding-left: 30px;
+    }
+  }
+  .mypage-menu {
+    border-top: 2px solid #00008b;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #C5CAE9;
+    margin-bottom: 60px;
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 40px;
+        padding: 5px;
+        a {
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}
+
+.mypage-menu-item{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  &:before {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  &:after {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  &:before, &:after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: transform .2s ease-out, opacity .2s ease-out;
+    background-color: #9FA8DA;
+    color: blue;
+  }
+  &:hover:before, &:hover:after, &:focus:before, &:focus:before {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.mypage-menu-item-label{
+  position: relative;
+  z-index: 2;
+}
+
+.account-user-hello {
+  margin-left: 100px;
+  margin-bottom: 30px;
+  vertical-align: middle;
+  margin-right: 30px;
+  h3 {
+    img {
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.account-form {
+  width: 70%;
+  margin: 40px auto 0;
+}
+
+// .mypage-mypage-box {
+//   width: 80%;
+//   margin: 40px auto 0;
+// }
+
+.account-form1 {
+  float: left;
+
+}
+
+.account-form2 {
+  float: right;
+}
+
+.account-form-field {
+  @extend .user-sign-field;
+  input {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  span, em {
+    font-size: 12px;
+  }
+}
+
+.account-form-button {
+  @extend .user-sign-button;
+  text-align: center
+}
+
+.account-back-button {
+  @extend .back-button;
+  margin-top: 50px;
+}
+
+// .mypage-account-info1 {
+//   float: left;
+//   width: 48%;
+//   table{
+//     font-size: 12px;
+//     width: 100%;
+//    tbody tr td {
+//       padding: 5px;
+//       &:first-child {
+//         width: 40%;
+//         background-color:#f7f8fe;
+//       }
+//       &:last-child {
+//         background-color: #c8cbdb;
+//         width: 60%;
+//       }
+//     }
+//   }
+// }
+
+// .mypage-account-info2 {
+//   @extend .mypage-account-info1;
+//   float: right;
+//   table {
+//     tbody tr td {
+//       &:first-child {
+//         width: 30%;
+//       }
+//       &:last-child {
+//         background-color: #c8cbdb;
+//         width: 70%;
+//       }
+//     }
+//   }
+// }
+
+
+ // USER ACCOUNT
+
+
+// TRAVEL JOURNAL
+
+.travel-journal-box {
+  width: 80%;
+  margin: 50px auto;
+}
+
+// TRAVEL JOURNAL NEW
+
+.trabel-journal-form-title {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.trabel-journal-form {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  h3 {
+    background-color: #93f9ec;
+    line-height: 30px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    background-color: #f5f5f5;
+    border-style: none;
+    border: 1px solid #333;
+    border-radius: 3px;
+  }
+  textarea {
+    height: 100px;
+  }
+  select {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    font-size: 16px;
+    height: 30px;
+  }
+  input[type="checkbox"] {
+    font-size: 15px;
+    width: auto;
+    margin: 10px;
+  }
+  p {
+    font-size: 12px;
+  }
+  input[type="submit"] {
+    width: 200px;
+    margin-top: 50px;
+    &:hover {
+      background-color: #93f9ec;
+    }
+  }
+}
+
+// TRAVEL JOURNAL NEW
+
+
+// TRAVEL JOURNAL INDEX
+
+.journal-index-box {
+  width: 80%;
+  margin: 30px auto;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 20px 30px;
+}
+
+.journal-index-left {
+  float: left;
+  h2 {
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 20px;
+  }
+}
+
+.journal-index-date {
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: #a9a9a9;
+}
+
+.journal-index-content {
+  color: #808080;
+}
+
+.journal-index-user {
+  margin-top: 20px;
+  span {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+}
+
+.journal-index-right {
+  float: right;
+}
+
+// TRAVEL JOURNAL INDEX
+
+
+// TRAVEL JOURNAL SHOW
+
+.travel-journal-detail-box {
+  width: 40%;
+  margin: 50px auto;
+  h2 {
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 16px 10px;
+  }
+  p {
+    padding: 16px 10px;
+  }
+  .journal-detail-date {
+    font-size: 12px;
+    padding-right: 20px;
+  }
+  .journal-detail-user {
+    span {
+      font-size: 12px;
+      padding-right: 10px;
+    }
+  }
+  .travel-journal-detail-img {
+    margin: 30px auto;
+    width: 90%;
+    img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+
 
 
 

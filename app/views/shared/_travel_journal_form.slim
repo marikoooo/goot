@@ -1,0 +1,16 @@
+.trabel-journal-form
+  = form_for @journal do |f|
+    h3 旅のタイトル
+    = f.text_field :title
+    h3 内容・感想
+    = f.text_area :content
+    h3 行き先
+    = f.collection_select :country_id, Country.all, :id, :name_ja
+    h3 写真
+    = f.file_field :journal_image
+    = f.hidden_field :user_id, value: current_user.id
+    h3 公開
+    = f.check_box :status, {}, checked_value = "published", unchecked_value = "unpublished"
+    = f.label :status, "公開する"
+    p 公開する場合はチェックを付けてください。
+    = f.submit

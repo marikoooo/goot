@@ -1,0 +1,17 @@
+.travel-journal-box
+  h2.trabel-journal-form-title 旅行記一覧
+  .journal-index-box.clearfix
+    - @journals.each do |journal|
+      = link_to travel_journal_path(journal.id) do ||
+        .journal-index-left
+          p.journal-index-date
+            | 投稿 : 
+            = journal.created_at.strftime("%Y-%m-%d")
+          h2 = journal.title
+          p.journal-index-content
+           = journal.content
+          p.journal-index-user
+            span written by
+            = journal.user.user_name
+        .journal-index-right
+          = image_tag journal.journal_image, size: '150'
