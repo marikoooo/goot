@@ -1,0 +1,19 @@
+.travel-journal-box
+  h2.trabel-journal-form-title 旅仲間募集投稿
+  p 一緒に旅をしてくれる仲間を募集しましょう！
+.trabel-journal-form
+  = form_for @travelmate do |f|
+    h3 表題
+    = f.text_field :title
+    h3 内容
+    = f.text_area :content
+    h3 行き先
+    = f.text_field :destination
+    h3 募集人数
+    = f.number_field :recruitment_number
+    h3 出発日
+    = f.date_select :departure_date
+    h3 帰国日
+    = f.date_select :return_date
+    = f.hidden_field :user_id, value: current_user.id
+    = f.submit

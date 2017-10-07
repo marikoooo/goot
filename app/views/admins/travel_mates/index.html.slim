@@ -1,0 +1,17 @@
+.admin-table-title
+  h1 旅仲間募集一覧
+  .admin-link-btn
+    = link_to "戻る" , :back
+.travel_mate-index-box
+  - @travelmates.each do |mate|
+    = link_to travel_mate_path(mate.id) do ||
+      .travel-mate-index
+        p.travel-mate-index-date
+          | 投稿 : 
+          = mate.created_at.strftime("%Y-%m-%d")
+        h2 = mate.title
+        p.journal-index-content
+         = mate.content
+        p.journal-index-user
+          span written by
+          = mate.user.user_name

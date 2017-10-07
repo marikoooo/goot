@@ -1,0 +1,18 @@
+.admin-table-title
+  h1 = @journal.title
+  .admin-link-btn
+    = link_to "戻る" , :back
+.travel-journal-detail-box
+  p
+    span.journal-detail-date
+      | 投稿 : 
+      = @journal.created_at.strftime("%Y-%m-%d")
+    span.journal-detail-user
+      span written by
+      = @journal.user.user_name
+  p
+    | 場所 : 
+    = @journal.country.name_ja
+  p = @journal.content
+  .travel-journal-detail-img
+    = image_tag @journal.journal_image

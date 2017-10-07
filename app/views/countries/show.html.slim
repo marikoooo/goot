@@ -1,6 +1,6 @@
 .country-detail-box
-  = image_tag @country.country_image
-  h1 = @country.name_en
+  div.country-detail-img style="background-image:url(#{@country.country_image});"
+    h1 = @country.name_en
 .country-detail-overview-title
   h2 = @country.name_ja
 .country-detail-overview
@@ -21,4 +21,3 @@
     = @country.currency
 .back-button
   = link_to "戻る", :back
-
