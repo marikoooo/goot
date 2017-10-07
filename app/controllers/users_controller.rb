@@ -4,5 +4,6 @@ class UsersController < ApplicationController
   def mypage
     @user = User.find(params[:id])
     @journals = current_user.travel_journals.all
+    @travelmates = current_user.travel_mates.all
   end
 end

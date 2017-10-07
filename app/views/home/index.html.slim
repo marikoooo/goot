@@ -29,6 +29,9 @@ section.toppage-menu
     li = link_to countries_path, class: "topmenu-btn" do ||
       | destination
       span
+    li = link_to travel_mates_path, class: "topmenu-btn" do ||
+      | travel mate
+      span
     li = link_to travel_journals_path, class: "topmenu-btn" do ||
       | travel journal
       span
@@ -50,6 +53,26 @@ section.top-content1.clearfix
       p = link_to country_path(country.id), class: "country-name", data_hover_label: "#{country.name_ja}" do ||
         span.countryname_label
          = country.name_en
+section.top-content2.clearfix
+  .top-travel-mate-box
+    p
+      = link_to new_travel_mate_path, class: 'top-journal-item' do
+        span.top-journal-item-label 旅仲間を探す
+    p
+      = link_to travel_mates_path, class: 'top-journal-item' do
+        span.top-journal-item-label 旅仲間募集一覧
+  h1.top-content-title2
+    span data-text="T" T
+    span data-text="R" R
+    span data-text="A" A
+    span data-text="V" V
+    span data-text="E" E
+    span data-text="L" L
+    span data-text=" " &nbsp;
+    span data-text="M" M
+    span data-text="A" A
+    span data-text="T" T
+    span data-text="E" E
 section.top-content3.clearfix
   h1.top-content-title1
     span data-text="T" T

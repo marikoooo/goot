@@ -1,0 +1,26 @@
+.travel-mate-box
+  h2 = @travelmate.title
+  p.journal-index-date
+    | 投稿 : 
+    = @travelmate.created_at.strftime("%Y-%m-%d %H:%M")
+  p.travelmate-detail-user
+    = @travelmate.user.user_name
+    - if @travelmate.user.profile_image.present?
+      = image_tag @travelmate.user.profile_image, size:"30"
+    - else
+      = image_tag("/images/no_image.jpg", size: "30")
+  p
+    | 行き先 : 
+    = @travelmate.destination
+  p.travelmate-detail-content
+    = @travelmate.content
+  .travelmate-detail-list
+    p
+      | 募集人数 : 
+      = @travelmate.recruitment_number
+    p
+      | 出発日 : 
+      = @travelmate.departure_date
+    p
+      | 帰国日 : 
+      = @travelmate.return_date

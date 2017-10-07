@@ -1,8 +1,9 @@
 .travel-journal-box
   h2.trabel-journal-form-title 旅行記一覧
-  .journal-index-box.clearfix
-    - @journals.each do |journal|
-      = link_to travel_journal_path(journal.id) do ||
+  = link_to "旅行記を作成", new_travel_journal_path
+  - @journals.each do |journal|
+    = link_to travel_journal_path(journal.id) do ||
+      .journal-index-box.clearfix
         .journal-index-left
           p.journal-index-date
             | 投稿 : 

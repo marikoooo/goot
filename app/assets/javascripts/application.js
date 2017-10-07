@@ -36,3 +36,44 @@ $(function() {
     return false
   });
 });
+
+$(window).on("load",function(){
+ tr_default("#table-row-bg");
+ $("tr").click(function(){
+  tr_default("#table-row-bg");
+  tr_click($(this));
+ });
+});
+
+  $('a.ajax_link').delegate('ajax:success', function(data, res, xhr){
+    $('.user-index').html(res);
+  });
+
+function tr_default(tblID){
+ var vTR = tblID + " tr";
+ $(vTR).css("background-color","#ffffff");
+ $(vTR).mouseover(function(){
+ $(this).css("background-color","#dedbdb") .css("cursor","pointer")
+ });
+ $(vTR).mouseout(function(){
+  $(this).css("background-color","#ffffff") .css("cursor","normal")
+ });
+}
+
+function tr_click(trID){
+ trID.mouseover(function(){
+  $(this).css("background-color","#dedbdb") .css("cursor","pointer")
+ });
+}
+
+$(window).on("load",function() {
+    $('tbody tr[data-href]').click( function() {
+        window.location = $(this).attr('data-href');
+    }).find('a').hover( function() {
+        $(this).parents('tr').unbind('click');
+    }, function() {
+        $(this).parents('tr').click( function() {
+            window.location = $(this).attr('data-href');
+        });
+    });
+});

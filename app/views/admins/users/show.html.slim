@@ -1,0 +1,58 @@
+.admin-table-title
+  h1
+    = @user.user_name
+  .admin-link-btn
+    = link_to "ユーザーを編集", edit_user_registration_path
+  .admin-link-btn
+    = link_to "ユーザーを削除", admins_user_path, method: :delete, data: { confirm: '削除します。よろしいですか?'}
+  .admin-link-btn
+    = link_to "戻る" , :back
+.admin-table-box
+  .admin-user-detail-table
+    table
+      tr
+        th ユーザー名
+        td = @user.user_name
+      tr
+        th メールアドレス
+        td = @user.email
+      tr
+        th 名前
+        td
+          = @user.last_name
+          | &nbsp;
+          = @user.first_name
+      tr
+        th 名前(フリガナ)
+        td
+          = @user.last_name_kana
+          | &nbsp;
+          = @user.first_name_kana
+      tr
+        th 出身
+        td = @user.country
+      tr
+        th 性別
+        td = @user.gender
+      tr
+        th プロフィール写真
+        td
+          - if @user.profile_image.present?
+            = image_tag @user.profile_image, size: '100'
+          - else
+            = image_tag("/images/no_image.jpg", size: "100")
+  .admin-user-detail-journal
+    h3
+      = @user.user_name
+      | さんの旅行記
+    .admin-user-journal-index
+      - @user.travel_journals.each do |journal|
+        h4
+          = journal.title
+          span
+            | 作成日 : 
+            = journal.created_at.strftime("%Y-%m-%d")
+        .adnin-user-journal-index-flex
+          p.adnin-user-journal-index-content = journal.content
+          = image_tag journal.journal_image, size: "100"
+

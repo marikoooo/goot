@@ -20,7 +20,7 @@
             = f.text_field :first_name_kana, placeholder: "名前フリガナ（名）"
           .user-sign-field
             = f.text_field :country, placeholder: "出身国"
-            = f.text_field :gender, placeholder: "性別"
+            = f.select :gender, [ ["男", '男'], ["女", '女'] ], prompt: "性別"
           .user-sign-field
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード(#{@minimum_password_length}文字以上)"
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード確認"

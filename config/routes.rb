@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :countries, only: [:index, :show]
   resources :travel_journals
+  resources :travel_mates
   namespace :admins do
     resources :countries
-    resources :travel_journal
+    resources :travel_journals
+    resources :travel_mates
     resources :users
   end
 
