@@ -27,4 +27,7 @@ Rails.application.routes.draw do
 
   get 'admins/dashboard', to: 'admins#dashboard', as: 'dashboard'
   get 'users/mypage/:id', to: 'users#mypage', as: 'mypage'
+  get 'inquiry/new', to: 'inquiry#new'
+  post 'inquiry/confirm', to: 'inquiry#confirm'
+  post 'inquiry/thanks', to: 'inquiry#thanks'
 end

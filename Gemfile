@@ -41,8 +41,6 @@ group :development, :test do
   gem 'pry-doc'      # pry中に show-source [method名] でソース内を読める
   gem 'pry-byebug'   # binding.pryをソースに記載すると、ブレイクポイントとなりデバッグが可能になる
   gem 'pry-stack_explorer' # pry中にスタックを上がったり下がったり行き来できる
-  gem 'better_errors'     # 開発中のエラー画面をリッチにする
-  gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end
@@ -79,3 +77,7 @@ gem 'seed-fu'
 
 gem "font-awesome-rails"
 gem "font-awesome-sass"
+
+gem 'fog'
+
+gem 'dotenv-rails'

@@ -21,7 +21,7 @@ class Admins::CountriesController < AdminsController
   end
 
   def update
-    @country.save(country_params)
+    @country.update(country_params)
     redirect_to admins_country_path
   end
 
@@ -36,6 +36,8 @@ class Admins::CountriesController < AdminsController
     params.require(:country).permit(:name_ja,
                                             :name_en,
                                             :country_image,
+                                            :remove_country_image,
+                                            :country_image_cache,
                                             :currency,
                                             :language,
                                             :overview,

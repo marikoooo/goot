@@ -2,4 +2,39 @@
   h1 国を編集
   .admin-link-btn
     = link_to "戻る" , :back
-== render 'admins/shared/country_form'
+.admin-new-table-form
+  = form_for [:admins, @country] do |f|
+    table
+      tbody
+        tr
+          td = f.label :name_ja, '国名(日本語)'
+          td = f.text_field :name_ja
+        tr
+          td = f.label :name_en, '国名(英語)'
+          td = f.text_field :name_en
+        tr
+          td = f.label :country_image, '写真'
+          td
+            = image_tag @country.country_image.url, size: "100" if @country.country_image?
+            = f.file_field :country_image
+            = f.hidden_field :country_image_cache
+        tr
+          td = f.label :画像削除
+          td = f.check_box :remove_country_image
+        tr
+          td = f.label :currency, '通貨'
+          td = f.text_field :currency
+        tr
+          td = f.label :language, '言語'
+          td = f.text_field :language
+        tr
+          td = f.label :overview, '概要'
+          td = f.text_area :overview
+        tr
+          td = f.label :things_to_go, 'すること'
+          td = f.text_area :things_to_go
+        tr
+          td = f.label :when_to_go, '時期'
+          td = f.text_area :when_to_go
+    .admin-form-submit
+      = f.submit

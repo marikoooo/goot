@@ -1,0 +1,26 @@
+.inquiry-box
+  h2 お問い合わせフォーム
+  p 
+    | 当サイトについてのお問い合わせは、以下のフォームにてお送りください。ただし全てのご要望、ご質問にお答え出来かねますので予めご了承下さい。（個人的なご旅行の相談はご遠慮ください。）
+    br
+    | 必須項目をご記入いただき「確認」ボタンを押してください。
+  = form_for @inquiry, url: inquiry_confirm_path do |f|
+    - if @inquiry.errors.any?
+      srtong 入力内容にエラーがあります。
+    .inquiry-form
+      ul
+        - @inquiry.errors.each do |attr, msg|
+          li = msg
+      table
+        tr
+          th 名前（必須）
+          td = f.text_field :name
+        tr
+          th メールアドレス
+          td = f.text_field :email
+        tr
+          th メッセージ
+          td = f.text_area :message
+      .inquiry-btn
+        = f.submit '確認'
+
