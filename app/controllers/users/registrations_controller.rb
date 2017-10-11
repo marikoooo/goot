@@ -59,7 +59,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                                                                   :country,
                                                                                   :gender,
                                                                                   :introduction,
-                                                                                  :profile_image])
+                                                                                  :profile_image,
+                                                                                  :remove_profile_image,
+                                                                                  :profile_image_cache
+                                                                                  ])
   end
 
     def after_update_path_for(resource)

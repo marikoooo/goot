@@ -30,7 +30,7 @@
           .account-form-field
             = f.label :gender
             br
-            = f.select :gender, [ ["man", '男'], ["woman", '女'] ]
+            = f.select :gender, [ ["男", '男'], ["女", '女'] ]
           .account-form-field
             = f.label :email
             br
@@ -40,7 +40,7 @@
               | Currently waiting confirmation for:
               = resource.unconfirmed_email
         .clearfix
-          .account-form2 
+          .account-form2
             .account-form-field
               = f.label :password
               span
@@ -66,6 +66,10 @@
               = f.label :profile_image, "プロフィール写真"
               br
               = f.file_field :profile_image
+              = image_tag @user.profile_image.url, size: "100" if @user.profile_image?
+              = f.hidden_field :profile_image_cache
+              p = f.label :画像削除
+              = f.check_box :remove_profile_image
         .account-form-button
           = f.submit "更新する"
         .account-back-button

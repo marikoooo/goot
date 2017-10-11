@@ -927,6 +927,63 @@ a:visited {
   }
 }
 
+// TRAVEL MATE INDEX
+
+
+// INQUIRY NEW
+
+.inquiry-box {
+  width: 50%;
+  margin: 50px auto;
+  h2 {
+    color: #191970;
+    background-color: #e0ffff;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+  p {
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.inquiry-form {
+  margin: 0 auto;
+  width: 80%;
+  table {
+    width: 100%;
+    tr {
+    }
+    td {
+      padding: 5px 10px;
+      input {
+        height: 30px;
+        width: 300px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      textarea {
+        width: 300px;
+        height: 100px;
+      }
+     }
+   }
+}
+
+.inquiry-btn{
+  text-align: center;
+  input {
+    margin-top: 50px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 16px;
+    &:hover {
+      color: red;
+    }
+  }
+}
 
 
 

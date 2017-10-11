@@ -10,7 +10,9 @@
           td = f.text_field :name_en
         tr
           td = f.label :country_image, '写真'
-          td = f.file_field :country_image
+          td
+            = f.file_field :country_image
+            = f.hidden_field :country_image_cache
         tr
           td = f.label :currency, '通貨'
           td = f.text_field :currency
