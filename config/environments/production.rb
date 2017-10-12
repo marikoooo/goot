@@ -97,8 +97,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  # Do not dump schema after migrations.
-
-  #Rails.application.routes.default_url_options[:host] = 'goot.work'
+  
   config.action_mailer.default_url_options = { host: 'goot.work', port: 80 }
+  
 end
