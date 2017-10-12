@@ -3,7 +3,7 @@ class TravelJournalsController < ApplicationController
   before_action :set_travel_journal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @journals = TravelJournal.where(status: :published)
+    @journals = TravelJournal.where(status: :published).order(created_at: :desc)
   end
 
   def show

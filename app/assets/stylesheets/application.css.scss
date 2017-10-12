@@ -662,14 +662,129 @@ a:visited {
 }
 
 .mypage-to-journal-edit {
+  display: inline-block;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
   p {
     display: inline-block;
-    margin-right: 10px;
+    margin: 10px;
+    width: 90px;
   }
   a {
-  border: 1px solid #808080;
   padding: 5px 10px;
+  line-height: 30px;
+  color: #dbecf8;
+  &:hover {
+    color: #333;
   }
+  }
+}
+
+.hovicon.effect-5 {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  &:after {
+    display: none;
+  }
+  &:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #702fa8;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+    i {
+      color: #702fa8;
+    }
+  }
+}
+
+.hovicon.effect-5.sub-a:hover:before {
+  animation: toRightFromLeft 0.3s forwards;
+}
+
+@keyframes toRightFromLeft {
+  49% {
+      transform: translate(100%);
+  }
+  50% {
+      opacity: 0;
+      transform: translate(-100%);
+  }
+  51% {
+      opacity: 1;
+  }
+}
+
+.hovicon.effect-5.sub-b:hover:before {
+  animation: toLeftFromRight 0.3s forwards;
+}
+
+@keyframes toLeftFromRight {
+  49% {
+      transform: translate(-100%);
+  }
+  50% {
+      opacity: 0;
+      transform: translate(100%);
+  }
+  51% {
+      opacity: 1;
+  }
+}
+
+.hovicon.effect-5.sub-c:hover:before {
+    animation: toTopFromBottom 0.3s forwards;
+}
+
+@keyframes toTopFromBottom {
+  49% {
+      transform: translateY(-100%);
+  }
+  50% {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  51% {
+      opacity: 1;
+  }
+}
+
+.hovicon.effect-5.sub-d:hover:before {
+  animation: toBottomFromTop 0.3s forwards;
+}
+
+@keyframes toBottomFromTop {
+  49% {
+      transform: translateY(100%);
+  }
+  50% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  51% {
+      opacity: 1;
+  }
+}
+
+.hovicon {
+    display: inline-block;
+    cursor: pointer;
+
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .hovicon:after {
+    width: 100%;
+    height: 100%;
+    content:'';
+    box-sizing: content-box;
+}
+.hovicon:before {
+    speak: none;
+    text-transform: none;
+    display: block;
 }
 
  // USER MYPAGE
@@ -728,14 +843,19 @@ a:visited {
 
 // TRAVEL JOURNAL NEW
 
-.trabel-journal-form-title {
+.travel-journal-form-title {
   text-align: center;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
+  padding-top: 12px;
+  padding-bottom: 30px;
+  color: #2F24C1;
+  background-image: url("/images/turquoise-top-gradient-background.jpg");
+  background-size: contain;
 }
 
-.trabel-journal-form {
+.travel-journal-form {
   text-align: center;
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   h3 {
     background-color: #93f9ec;
@@ -743,10 +863,10 @@ a:visited {
   }
   input, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-top: 10px;
     margin-bottom: 50px;
-    font-size: 18px;
+    font-size: 12px;
     background-color: #f5f5f5;
     border-style: none;
     border: 1px solid #333;
@@ -776,6 +896,10 @@ a:visited {
       background-color: #93f9ec;
     }
   }
+  input[type="date"] {
+    width: 20%;
+  }
+
 }
 
 // TRAVEL JOURNAL NEW
@@ -793,10 +917,13 @@ a:visited {
 
 .journal-index-left {
   float: left;
-  h2 {
-    border-bottom: 1px solid #dcdcdc;
-    margin-bottom: 20px;
-  }
+  width: 80%;
+}
+
+.journal-index-title {
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .journal-index-date {
@@ -808,10 +935,15 @@ a:visited {
 
 .journal-index-content {
   color: #808080;
+  word-wrap: break-word;
 }
 
 .journal-index-user {
   margin-top: 20px;
+  img {
+    vertical-align: middle;
+    margin-right: 20px;
+  }
   span {
     font-size: 12px;
     padding-right: 10px;
@@ -863,13 +995,36 @@ a:visited {
 
 // TRAVEL MATE INDEX
 
-.travel_mate-index-box {
+.travel-mate-index-box {
   width: 50%;
   margin: 50px auto;
   h2 {
     text-align: center;
+    background-image: url("/images/gradation_green2.jpg");
+    background-size: contain;
+    color: #2F24C1;
+    margin-bottom: 60px;
+    padding: 20px;
   }
 }
+
+.travel-mate-index-box > a{
+  color: #fff;
+}
+
+.square_btn{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  &:active {
+    transform: translateY(4px);
+    border-bottom: none;
+  }
+}
+
 
 .travel-mate-index {
   @extend .journal-index-box;
@@ -892,6 +1047,7 @@ a:visited {
   span {
     font-size: 12px;
     padding-right: 10px;
+    color: #333;
   }
 }
 
@@ -913,12 +1069,16 @@ a:visited {
   font-size: 18px;
   color: blue;
   margin-bottom: 10px;
+  span {
+    margin-right: 15px;
+  }
 }
 
 .travelmate-detail-content {
   border: 1px solid #dcdcdc;
   padding: 20px;
   margin: 20px;
+  word-wrap: break-word;
 }
 
 .travelmate-detail-list {
@@ -957,6 +1117,7 @@ a:visited {
     }
     td {
       padding: 5px 10px;
+      word-wrap: break-word;
       input {
         height: 30px;
         width: 300px;
@@ -966,6 +1127,9 @@ a:visited {
       textarea {
         width: 300px;
         height: 100px;
+      }
+      input, textarea {
+        padding: 5px 10px;
       }
      }
    }
@@ -984,6 +1148,33 @@ a:visited {
     }
   }
 }
+
+.inquiry-thanks {
+  text-align: center;
+  margin: 50px;
+  height: 500px;
+  h2 {
+    padding-bottom: 30px;
+  }
+  p {
+    line-height: 20px;
+  }
+}
+
+// INQUIRY NEW
+
+
+// SIGN UP MAIL
+
+.each-title {
+  text-align: center;
+  color: #2F24C1;
+  background-image: url("/images/turquoise-top-gradient-background.jpg");
+  background-size: contain;
+}
+
+
+
 
 
 

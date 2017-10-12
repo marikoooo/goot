@@ -3,7 +3,7 @@ class TravelMatesController < ApplicationController
   before_action :set_travel_mate, only: [:show, :edit, :update, :destroy]
 
   def index
-    @travelmates = TravelMate.all
+    @travelmates = TravelMate.all.order(created_at: :desc)
   end
 
   def new

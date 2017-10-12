@@ -1,18 +1,19 @@
-.travel-journal-box
-  h2.trabel-journal-form-title 旅行記一覧
+.travel-journal-box 
+  h2.travel-journal-form-title 旅行記一覧
   = link_to "旅行記を作成", new_travel_journal_path
   - @journals.each do |journal|
     = link_to travel_journal_path(journal.id) do ||
-      .journal-index-box.clearfix
+      .journal-index-box
+        p.journal-index-date
+          | 投稿 : 
+          = journal.created_at.strftime("%Y-%m-%d %H:%M")
+        h2.journal-index-title = journal.title
         .journal-index-left
-          p.journal-index-date
-            | 投稿 : 
-            = journal.created_at.strftime("%Y-%m-%d")
-          h2 = journal.title
           p.journal-index-content
            = journal.content
           p.journal-index-user
             span written by
             = journal.user.user_name
-        .journal-index-right
-          = image_tag journal.journal_image, size: '150'
+        .clearfix
+          .journal-index-right
+            = image_tag journal.journal_image, size: '150'
