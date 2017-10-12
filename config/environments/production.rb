@@ -62,7 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "goot_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.smtp_settings = {
       port:                 587,
       address:              'smtp.gmail.com',
@@ -98,7 +98,6 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
 
   #Rails.application.routes.default_url_options[:host] = 'goot.work'
   config.action_mailer.default_url_options = { host: 'goot.work', port: 80 }
