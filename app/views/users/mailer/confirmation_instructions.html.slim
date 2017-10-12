@@ -1,9 +1,11 @@
+h2 Thank you for sign up
 p
-  | 「goot」会員へ仮登録ありがとうございます。
   = @user_name
-  | !
+  | さん!
+  br
+  |「goot」会員へ登録ありがとうございます。
 p
-  | 下記のリンクをクリックして本登録を行ってください。本登録が完了されると、各サービスへの投稿ができるようになります。
+  | 下記のリンクをクリックしてメール認証を行ってください。認証されると、各サービスへの投稿ができるようになります。
 p
   = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
 p

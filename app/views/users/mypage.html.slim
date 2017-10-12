@@ -34,16 +34,20 @@
               = journal.created_at.strftime("%Y-%m-%d")
             h2 = journal.title
             p.journal-index-content
-             = journal.content
+             = journal.content.html_safe.truncate(100)
             p.journal-index-user
               span written by
               = journal.user.user_name
-          .journal-index-right
-            = image_tag journal.journal_image, size: '150'
+          .clearfix
+            .journal-index-right
+              = image_tag journal.journal_image, size: '150'
           .mypage-to-journal-edit
-            p = link_to "詳細", travel_journal_path(journal)
-            p = link_to "編集する", edit_travel_journal_path(journal)
-            p = link_to "削除する", travel_journal_path(journal), method: :delete, data: { confirm: '削除します。よろしいですか?'}
+            p.hovicon.effect-5.sub-a
+              i = link_to "詳細", travel_journal_path(journal)
+            p.hovicon.effect-5.sub-a
+              i = link_to "編集する", edit_travel_journal_path(journal)
+            p.hovicon.effect-5.sub-a
+              i = link_to "削除する", travel_journal_path(journal), method: :delete, data: { confirm: '削除します。よろしいですか?'}
     .travel_mate-index-box
     h2 旅の仲間募集一覧
     - @travelmates.each do |mate|

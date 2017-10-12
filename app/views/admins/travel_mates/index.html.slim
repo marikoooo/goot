@@ -8,7 +8,7 @@
       .travel-mate-index
         p.travel-mate-index-date
           | 投稿 : 
-          = mate.created_at.strftime("%Y-%m-%d")
+          = mate.created_at.strftime("%Y-%m-%d %H : %M")
         h2 = mate.title
         p.journal-index-content
          = mate.content
