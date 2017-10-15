@@ -1,23 +1,55 @@
 .country-detail-box
   div.country-detail-img style="background-image:url(#{@country.country_image});"
     h1 = @country.name_en
-.country-detail-overview-title
-  h2 = @country.name_ja
-.country-detail-overview
-  = @country.overview
-  h2
-    | Things to go...
-    span 行ってすること
-  = simple_format(@country.things_to_go)
-  h2
-    | When to go...
-    span 行く時期
-  = simple_format(@country.when_to_go)
-  h3
-    | 言語：
-    = @country.language
-  h3
-    | 通貨：
-    = @country.currency
+.coutnry-detail-container
+  .coutnry-detail-contentbox
+    .country-detail-icon.country-detail-bg1
+      .front-content
+        i.fa.fa-smile-o
+        h3 Overview
+    .country-detail-back-content
+      h3
+        = @country.name_ja
+        | について
+      .back-content-desc
+        = simple_format(@country.overview)
+  .coutnry-detail-contentbox
+    .country-detail-icon.country-detail-bg2
+      .front-content
+        i.fa.fa-map
+        h3 Things to go...
+    .country-detail-back-content
+      h3 行ってすること
+      .back-content-desc
+        .content-desc-list
+          .list-text
+            = simple_format(@country.things_to_go)
+  .coutnry-detail-contentbox
+    .country-detail-icon.country-detail-bg3
+      .front-content
+        i.fa.fa-calendar-o
+        h3
+          | When to go...
+    .country-detail-back-content
+      h3 行く時期
+      .back-content-desc
+        = simple_format(@country.when_to_go)
+  .coutnry-detail-contentbox
+    .country-detail-icon.country-detail-bg4
+      .front-content
+        i.fa.fa-info-circle
+        h3 other contents
+    .country-detail-back-content
+      h3 その他情報
+      .back-content-desc
+        .content-desc-list
+          .list-text
+            p
+              | 通貨：
+              = @country.currency
+            p
+              | 言語：
+              = @country.language
 .back-button
   = link_to "戻る", :back
+

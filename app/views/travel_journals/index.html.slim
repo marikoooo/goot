@@ -1,11 +1,11 @@
-.travel-journal-box 
+.travel-journal-box
   h2.travel-journal-form-title 旅行記一覧
-  = link_to "旅行記を作成", new_travel_journal_path
+  = link_to "旅行記を作成", new_travel_journal_path, class: "square_btn"
   - @journals.each do |journal|
     = link_to travel_journal_path(journal.id) do ||
       .journal-index-box
         p.journal-index-date
-          | 投稿 : 
+          | 投稿 :
           = journal.created_at.strftime("%Y-%m-%d %H:%M")
         h2.journal-index-title = journal.title
         .journal-index-left

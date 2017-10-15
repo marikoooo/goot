@@ -1,6 +1,8 @@
 .admin-table-title
   h1 = @country.name_ja
   .admin-link-btn
+    = link_to "国一覧", admins_countries_path
+  .admin-link-btn
     = link_to "国を編集", edit_admins_country_path
   .admin-link-btn
     = link_to "国を削除", admins_country_path, method: :delete, data: { confirm: '削除します。よろしいですか?'}
