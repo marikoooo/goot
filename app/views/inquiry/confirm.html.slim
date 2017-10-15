@@ -18,5 +18,7 @@
           td
             = f.hidden_field :message
             = @inquiry.message
-      .inquiry-btn
-        = f.submit '送信'
+    .inquiry-btn
+      = f.submit '送信', class: "square_btn"
+  .inquiry-btn
+    = link_to '戻る', inquiry_new_path

@@ -254,14 +254,14 @@ svg.intro {
   padding: 50px 100px 0;
   font-weight: 700;
   line-height: 3rem;
-  column-count: 2;
+  column-count: 3;
   height: 100%;
 }
 
 .country-name {
   position: relative;
   display: inline-block;
-  padding-right: 150px;
+  padding-right: 50px;
   &:after {
     content: '' attr(data_hover_label) '';
     position: absolute;
