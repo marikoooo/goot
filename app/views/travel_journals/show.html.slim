@@ -1,12 +1,15 @@
-.travel-journal-detail-box
+.journal-mate-detail-box
   h2 = @journal.title
-  p
-    span.journal-detail-date
-      | 投稿 : 
-      = @journal.created_at.strftime("%Y-%m-%d")
-    span.journal-detail-user
-      span written by
+  .journal-mate-date
+    | 投稿 : 
+    = @journal.created_at.strftime("%Y-%m-%d")
+    span.journal-mate-user
+      | by&nbsp;
       = @journal.user.user_name
+      - if @journal.user.profile_image.present?
+        = image_tag @journal.user.profile_image, size: "80"
+      - else
+        = image_tag("/images/no_image.jpg", size: "50")
   p
     | 場所 : 
     = @journal.country.name_ja
