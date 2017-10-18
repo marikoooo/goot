@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get 'inquiry/new', to: 'inquiry#new'
   post 'inquiry/confirm', to: 'inquiry#confirm'
   post 'inquiry/thanks', to: 'inquiry#thanks'
+  get 'rate/index', to: 'rate#index', as: 'rate'
 end
