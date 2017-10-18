@@ -1080,134 +1080,46 @@ a:visited {
   word-wrap: break-word;
 }
 
-
-// .journal-index-content {
-//   color: #808080;
-//   word-wrap: break-word;
-// }
+// TRAVEL JOURNAL INDEX
 
 
+// TRAVEL JOURNAL SHOW
 
-// // TRAVEL JOURNAL INDEX
+.journal-mate-detail-box {
+  width: 40%;
+  margin: 50px auto;
+  h2 {
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    box-shadow: 3px 3px 3px 1px #0765fc;
+    padding: 16px 10px;
+    background-image: linear-gradient(-90deg, #70FFC8, #52BDFF);
 
+  }
+  .travel-journal-detail-img {
+    margin: 30px auto;
+    width: 90%;
+    img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
 
-// // TRAVEL JOURNAL SHOW
+.travelmate-detail-content {
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+  margin: 20px;
+  word-wrap: break-word;
+}
 
-// .travel-journal-detail-box {
-//   width: 40%;
-//   margin: 50px auto;
-//   h2 {
-//     border-top: 1px solid #dcdcdc;
-//     border-bottom: 1px solid #dcdcdc;
-//     padding: 16px 10px;
-//   }
-//   p {
-//     padding: 16px 10px;
-//   }
-//   .journal-detail-date {
-//     font-size: 12px;
-//     padding-right: 20px;
-//   }
-//   .journal-detail-user {
-//     span {
-//       font-size: 12px;
-//       padding-right: 10px;
-//     }
-//   }
-//   .travel-journal-detail-img {
-//     margin: 30px auto;
-//     width: 90%;
-//     img {
-//       width: 100%;
-//       height: 300px;
-//     }
-//   }
-// }
+.travelmate-detail-list {
+  p {
+    padding-bottom: 10px;
+  }
+}
 
-// // TRAVEL JOURNAL SHOW
-
-
-// // TRAVEL MATE INDEX
-
-// .travel-mate-index-box {
-//   width: 50%;
-//   margin: 50px auto;
-//   h2 {
-//     text-align: center;
-//     background-image: url("/images/gradation_green2.jpg");
-//     background-size: contain;
-//     color: #2F24C1;
-//     margin-bottom: 60px;
-//     padding: 20px;
-//   }
-// }
-
-// .travel-mate-index-box > a{
-//   color: #fff;
-// }
-
-
-
-
-// .travel-mate-index {
-//   @extend .journal-index-box;
-//   h2 {
-//     border-bottom: 1px solid #dcdcdc;
-//     margin-bottom: 20px;
-//   }
-// }
-
-
-// .journal-index-content {
-//   color: #808080;
-// }
-
-// .journal-index-user {
-//   margin-top: 20px;
-//   span {
-//     font-size: 12px;
-//     padding-right: 10px;
-//     color: #333;
-//   }
-// }
-
-// // TRAVEL MATE INDEX
-
-// .travel-mate-box {
-//   width: 50%;
-//   margin: 50px auto;
-//   h2 {
-//     background-image: linear-gradient(0deg, #15BBD1, #1E4EC8);
-//     color: #aaa;
-//     padding: 20px;
-//     margin-bottom: 20px;
-//     border-radius: 10px;
-//   }
-// }
-
-// .travelmate-detail-user {
-//   font-size: 18px;
-//   color: blue;
-//   margin-bottom: 10px;
-//   span {
-//     margin-right: 15px;
-//   }
-// }
-
-// .travelmate-detail-content {
-//   border: 1px solid #dcdcdc;
-//   padding: 20px;
-//   margin: 20px;
-//   word-wrap: break-word;
-// }
-
-// .travelmate-detail-list {
-//   p {
-//     padding-bottom: 10px;
-//   }
-// }
-
-// TRAVEL MATE INDEX
+// TRAVEL JOURNAL SHOW
 
 
 // INQUIRY NEW

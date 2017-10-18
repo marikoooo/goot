@@ -1,9 +1,8 @@
-.travel-mate-box
+.journal-mate-detail-box
   h2 = @travelmate.title
-  p.journal-index-date
+  .journal-mate-date
     | 投稿 : 
     = @travelmate.created_at.strftime("%Y-%m-%d %H:%M")
-  .travelmate-detail-user
     span = @travelmate.user.user_name
     - if @travelmate.user.profile_image.present?
       = image_tag @travelmate.user.profile_image, size:"50"
