@@ -24,41 +24,44 @@
         span Hello &nbsp;
         = @user.user_name
         | さん
-    .mypage-journal-box
-      p.mypage-journal-title あなたの旅行記
+    hr
+    .mypage-journal-mate-box
+      h3 あなたの旅行記
       - @journals.each do |journal|
-        .journal-index-box.clearfix
+        .mypage-index-wrap
+          .journal-mate-date
+            | 投稿 : 
+            = journal.created_at.strftime("%Y-%m-%d %H:%M")
+            .mypage-to-journal-mate-edit
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "詳細", travel_journal_path(journal)
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "編集する", edit_travel_journal_path(journal)
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "削除する", travel_journal_path(journal), method: :delete, data: { confirm: '削除します。よろしいですか?'}
           .journal-index-left
-            p.journal-index-date
-              | 投稿 : 
-              = journal.created_at.strftime("%Y-%m-%d")
             h2 = journal.title
-            p.journal-index-content
-             = journal.content.html_safe.truncate(100)
-            p.journal-index-user
-              span written by
-              = journal.user.user_name
+            = journal.content.html_safe.truncate(100)
           .clearfix
             .journal-index-right
-              = image_tag journal.journal_image, size: '150'
-          .mypage-to-journal-edit
-            p.hovicon.effect-5.sub-a
-              i = link_to "詳細", travel_journal_path(journal)
-            p.hovicon.effect-5.sub-a
-              i = link_to "編集する", edit_travel_journal_path(journal)
-            p.hovicon.effect-5.sub-a
-              i = link_to "削除する", travel_journal_path(journal), method: :delete, data: { confirm: '削除します。よろしいですか?'}
-    .travel_mate-index-box
-    h2 旅の仲間募集一覧
-    - @travelmates.each do |mate|
-      = link_to travel_mate_path(mate.id) do ||
-        .travel-mate-index
-          p.travel-mate-index-date
+              - if journal.journal_image.present?
+                = image_tag journal.journal_image, size: '100'
+              - else
+                = image_tag("/images/no_image.jpg", size: "100")
+            
+    .mypage-journal-mate-box
+      h3 旅の仲間募集一覧
+      - @travelmates.each do |mate|
+        .mypage-index-wrap
+          .journal-mate-date
             | 投稿 : 
-            = mate.created_at.strftime("%Y-%m-%d")
+            = mate.created_at.strftime("%Y-%m-%d %H:%M")
+            .mypage-to-journal-mate-edit
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "詳細", travel_mate_path(mate)
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "編集する", edit_travel_mate_path(mate)
+              p.mypage-edit-btn.effect-5.sub-a
+                i = link_to "削除する", travel_mate_path(mate), method: :delete, data: { confirm: '削除します。よろしいですか?'}
           h2 = mate.title
-          p.journal-index-content
-           = mate.content
-          p.journal-index-user
-            span written by
-            = mate.user.user_name
+          = mate.content.html_safe.truncate(100)

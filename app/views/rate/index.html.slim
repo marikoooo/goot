@@ -1,0 +1,41 @@
+.rate-box
+  h2 為替変換
+  ul
+    li#currency-usd 
+      | ドルUSD
+      option value="#{@usd}" = @usd
+    li#currency-eur
+      | ユーロEUR
+      option value="#{@eur}" = @eur
+    li#currency-gbli
+      | オーストラリアドルAUD
+      option value="#{@aud}" = @aud
+    li#currency-name
+      | 英国ポンドGBP
+      option value="#{@gbp}" = @gbp
+    li#currency-name
+      | 人民元CNH
+      option value="#{@cnh}" = @cnh
+  p 情報提供元：YJFX!
+
+  form.rate-form
+    | 1
+    select#currency onChange="changeCurrency()"
+      option value="$ドル"
+        | ＄ドル
+      option value="€ユーロ"
+        | €ユーロ
+      option value="人民元"
+        | 人民元
+    input type= "number" step="0.1" id="rate" size="12"
+      | 円
+    = image_tag("/images/worldmap.jpg", alt: "worldmap", size: "590x400" )
+    両替金額：
+    input type="number" id="inMoney" value="100" size="12"
+    br
+    input type="button" id="buttonExchange" value="ドルから円に両替"onClick="exchange('toYen')"
+    input type="button" id="buttonExchange2" value="円からドルに両替"onClick="exchange('fromYen')"
+    hr
+    両替結果：
+    #outMoney
+      | ------

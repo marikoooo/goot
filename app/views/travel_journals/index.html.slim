@@ -1,19 +1,24 @@
-.travel-journal-box
-  h2.travel-journal-form-title 旅行記一覧
-  = link_to "旅行記を作成", new_travel_journal_path, class: "square_btn"
+.journal-mate-index-box
+  h2.journal-index-title 旅行記一覧
+  .journal-mate-square_btn
+    = link_to "旅行記を作成", new_travel_journal_path
   - @journals.each do |journal|
     = link_to travel_journal_path(journal.id) do ||
-      .journal-index-box
-        p.journal-index-date
-          | 投稿 :
+      .journal-mate-index-content
+        h2 = journal.title
+        .journal-mate-date
+          | 投稿日 :
           = journal.created_at.strftime("%Y-%m-%d %H:%M")
-        h2.journal-index-title = journal.title
-        .journal-index-left
-          p.journal-index-content
-           = journal.content
-          p.journal-index-user
-            span written by
+          span.journal-mate-user
+            | by&nbsp;
             = journal.user.user_name
+            - if journal.user.profile_image.present?
+              = image_tag journal.user.profile_image, size: "80"
+            - else
+              = image_tag("/images/no_image.jpg", size: "50")
+        .journal-index-left
+          = simple_format(journal.content).truncate(500)
+          p 続きをみる＞
         .clearfix
           .journal-index-right
             = image_tag journal.journal_image, size: '150'
