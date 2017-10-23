@@ -78,9 +78,9 @@ gem 'seed-fu'
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 
-
 gem 'fog'
 
 gem 'dotenv-rails'
 
+gem 'ransack'
 
