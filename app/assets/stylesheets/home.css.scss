@@ -51,6 +51,34 @@
   }
 }
 
+.top-search-box {
+  width: 300px;
+  height: 35px;
+  margin-top: 20px;
+  margin-right: 50px;
+  text-align: center;
+  float: right;
+  input {
+    width: 250px;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    border-color: #fff;
+    height: 35px;
+    background-color: rgba(255, 255, 255,0.6);
+    font-size: 14px;
+  }
+  button {
+    padding: 5px 10px;
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    border-color: #fff;
+    border-left: none;
+    background-color: rgba(255, 255, 255,0.6);
+    cursor: pointer;
+  }
+}
+
 .top-subtitle {
   margin-top: 50px;
   margin-right: 50px;

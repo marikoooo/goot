@@ -3,5 +3,7 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @countries = Country.all
+    @search = Country.ransack(params[:q])
+    @country = @search.result
   end
 end

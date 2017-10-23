@@ -9,6 +9,12 @@
         - else
           li = link_to "LogIN", new_user_session_path
   .clearfix
+    .top-search-box
+      = search_form_for @search do |f|
+        = f.search_field :name_ja_cont, placeholder: "country search"
+        = f.button type: "submit"
+          i class='fa fa-search fa-lg'
+  .clearfix
     .top-subtitle
       svg.intro width="580" height="500"
         text.text.text-stroke clip-path="url(#text1)" text-anchor="start" x="30" y="150" DISCOVER
@@ -34,6 +40,9 @@ section.toppage-menu
       span
     li = link_to travel_journals_path, class: "topmenu-btn" do ||
       | travel journal
+      span
+    li = link_to root_path(anchor: "tips"), class: "topmenu-btn" do ||
+      | tips
       span
 section.top-content1.clearfix
   h1.top-content-title1
@@ -101,7 +110,7 @@ section.top-content4.clearfix
     p
       = link_to rate_path, class: 'top-journal-item' do
         span.top-journal-item-label 海外為替変換
-  h1.top-content-title2
+  h1.top-content-title2#tips
     span data-text="T" T
     span data-text="I" I
     span data-text="P" P

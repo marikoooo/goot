@@ -99,6 +99,15 @@ function changeCurrency(){
     case "人民元":
       gbp = document.getElementById('currency-gbp').innerHTML;
       rateElement.value = gbp;
+    case "人民元":
+      gbp = document.getElementById('currency-gbp').innerHTML;
+      rateElement.value = gbp;
+    case "人民元":
+      gbp = document.getElementById('currency-gbp').innerHTML;
+      rateElement.value = gbp;
+    case "人民元":
+      gbp = document.getElementById('currency-gbp').innerHTML;
+      rateElement.value = gbp;
       break;
     default:
       usd = document.getElementById('currency-usd').innerHTML;
@@ -107,7 +116,7 @@ function changeCurrency(){
   document.getElementById("buttonExchange").value =
     selectedCurrency + "から円に両替";
   document.getElementById("buttonExchange2").value =
-    selectedCurrency +"円から" + selectedCurrency + "に両替"
+    "円から" + selectedCurrency + "に両替"
 }
 function exchange(exchangeType) {
   var rate = document.getElementById("rate").value;
